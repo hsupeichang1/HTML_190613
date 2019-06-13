@@ -6,6 +6,8 @@
     <title>變數的宣告和生命週期</title>
     <script>
         // 1. 在這裡宣告一個變數 x 設定初始值 為 999
+        var x = 999;
+
     </script>
 </head>
 
@@ -22,9 +24,15 @@
 
     <script>
         // 2. 網頁執行後，在console觀察一下 (chrome > 右鍵 > 檢查 > console頁籤)
-        console.log(x);
+        // console.log(x);
+        console.log("這是第一個console =" + x);
 
         // 4. 撰寫一個function，在function裡面宣告一個變數 x 設定初始值 為 1，並log下來
+        function getX(){
+            var x=1;
+            console.log("這是第二個console =" + x);
+            console.log("這是第三個console =" + window.x); 
+        }
 
         // 5. 至瀏覽器觀察，log的紀錄是什麼?
 
@@ -33,10 +41,20 @@
 
     <script>
         // 8. function set() 設置一個變數y，但沒有var關鍵字，給予初始值 2 後log出來查看
+        function set(){
+            y = 2;
+            z = 3;
+            console.log("這是設定Y的console =" + y);
+            console.log("這是設定Y的console z =" + z);
+        }
 
         // 9. 在步驟8的同一個function裡面 設置另外一個變數z，並給予初始值 3 ，且log出來查看
 
         // 10. function get() 將變數 y 和 變數 z log出來查看
+        function get(){
+            console.log("這是設定Y的console =" + y);
+            console.log("這是設定Y的console z =" + z);
+        }
     </script>
 
     <script>
@@ -45,14 +63,15 @@
         // var 與 ES6 let const 差異：https://ithelp.ithome.com.tw/articles/10209121
         // [筆記] JavaScript ES6 中的模版字符串（template literals）和標籤模版（tagged template）：https://pjchender.blogspot.com/2017/01/javascript-es6-template-literalstagged.html
 
-        // if (true) {
-        //     var testVar = "a"
-        //     let testLet = "b";
-        //     const testConst = "c";
-        // }
-        // console.log(`testVar: ${testVar}`);
-        // console.log(`testLet: ${testLet}`);
-        // console.log(`testConst: ${testConst}`);
+        if (true) {
+            var testVar = "a"
+            let testLet = "b"; //新變數宣告方式
+            const testConst = "c"; //新變數宣告方式
+        }
+        console.log("testVar:" + testVar); //在if的狀態下var變數在大括弧外可以作用
+        console.log(`testVar: ${testVar}`);//新版撰寫方式 
+        console.log(`testLet: ${testLet}`);//新版撰寫方式 不會顯示
+        console.log(`testConst: ${testConst}`);//新版撰寫方式 不會顯示
     </script>
 </body>
 
