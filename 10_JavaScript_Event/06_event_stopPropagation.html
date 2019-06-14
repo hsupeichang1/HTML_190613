@@ -9,10 +9,30 @@
 <body>
 
     <!-- 1. 撰寫一個 <button>，點選後再 console.log 寫下一些訊息 -->
+
     <!-- 2. 撰寫一個 <p>，點選後再 console.log 寫下一些訊息，且包住步驟一的 <button> -->
     <!-- 3. 撰寫一個 <div>，點選後再 console.log 寫下一些訊息，且包住步驟二的 <p> -->
     <!-- 4. 觀察 console.log 發生了什麼事情? -->
-  
+    <div onclick="divClick()" style="background: cyan">
+        <p onclick="pClick()" style="background: crimson; width: 300px">
+            <button onclick="btnClick(event)">btn</button>
+        </p>
+    </div>
+
+    <script>
+        function divClick() {
+            console.log("div click");
+        }
+        function pClick() {
+            console.log("p click");
+        }
+        function btnClick(e) {
+            console.log("btn click");
+
+            e.stopPropagation();
+        }
+    </script>
+
 </body>
 
 </html>

@@ -12,6 +12,35 @@
     <p><a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">event list</a></p>
     <p><a href="https://www.w3schools.com/jsref/obj_events.asp" target="_blank">event object</a></p>
 
+    <h2>測試綁定onkeypress事件</h2>
+    <input type="text" onkeypress="testKeypress(event)">
+    <p>這裡會顯示keyCode: <span id="pressKeyCode"></span></p>
+    <p>這裡會顯示charCode: <span id="pressCharCode"></span></p>
+
+    <hr>
+
+    <h2>測試綁定onkeydown事件</h2>
+    <input type="text" onkeydown="testKeydown(event)">
+    <p>這裡會顯示keyCode:<span id="downKeyCode"></span></p>
+    <p>這裡會顯示charCode:<span id="downCharCode"></span></p>
+
+
+    <script>
+        
+        //測keypress
+        function testKeypress(obj){
+            document.getElementById("pressKeyCode").innerHTML = obj.keyCode;
+            document.getElementById("pressCharCode").innerHTML = obj.charCode;
+        }
+
+        //測keydown
+        function testKeydown(obj){
+            document.getElementById("downKeyCode").innerHTML = obj.keyCode;
+            document.getElementById("downCharCode").innerHTML = obj.charCode;
+        }
+
+    </script>
+
 </body>
 
 </html>
